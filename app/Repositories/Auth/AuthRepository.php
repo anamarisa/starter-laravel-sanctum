@@ -4,8 +4,7 @@ namespace App\Repositories\Auth;
 
 use LaravelEasyRepository\Repository;
 
-interface AuthRepository extends Repository{
-
-    // Write something awesome :)
+interface AuthRepository extends Repository
+{
     public function findByEmail($email);
 }

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer("discount");
             $table->enum("enable", ["yes", "no"])->default("yes");
             $table->foreignId('market_id')->constrained('markets')->cascadeOnDelete();
+            $table->string('created_by');
             $table->softDeletes();
             $table->timestamps();
         });
