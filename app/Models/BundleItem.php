@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class BundleItem extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    public function category()
+    public function bundle()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Bundle::class);
     }
 
-    public function bundleItem()
+    public function menu()
     {
-        return $this->hasMany(BundleItem::class);
+        return $this->belongsTo(Menu::class);
     }
 }
