@@ -14,4 +14,5 @@ interface UserRepository extends Repository
      public function getPaginatedUser($perPage = 10);
      public function getUserById($id);
      public function updateStatus($id);
+     public function verifyUpdate($id);
 }

@@ -98,4 +98,17 @@ class UserRepositoryImplement extends Eloquent implements UserRepository
             return ResponseHelpers::sendError('Something went wrong while updating user status', [$e], 500);
         }
     }
+
+    public function verifyUpdate($id)
+    {
+        try {
+            $user = $this->model->findOrFail($id);
+            $user->is_verified = 1;
+            $user->save();
+
+            return $user;
+        } catch (\Exception $e) {
+            return ResponseHelpers::sendError('Something went wrong while updating user status', [$e], 500);
+        }
+    }
 }
